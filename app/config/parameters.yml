@@ -2,11 +2,13 @@
 parameters:
     database_host: 127.0.0.1
     database_port: null
-    database_name: symfony
+    # update name of database
+    database_name: michaelprepatest
     database_user: root
     database_password: null
     mailer_transport: smtp
     mailer_host: 127.0.0.1
-    mailer_user: null
+    # set your email adress
+    mailer_user: michaeljpitz@gmail.com
     mailer_password: null
     secret: 5fd387dc7577c5990f5ecbc4afd8c7575a813233
