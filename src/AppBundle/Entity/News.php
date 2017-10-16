@@ -52,13 +52,22 @@ class News
      */
     private $fosuserid;
 
-    /*
-     * Création d'un constructeur pour prendre la date par défaut du serveur
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Images", mappedBy="news")
+     */
+    private $images;
+
+    /**
+     * Constructor
      */
     public function __construct()
     {
+        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
         $this->temps = new \DateTime();
     }
+
 
     /**
      * Get id
@@ -164,5 +173,39 @@ class News
     public function getFosuserid()
     {
         return $this->fosuserid;
+    }
+
+    /**
+     * Add image
+     *
+     * @param \AppBundle\Entity\Images $image
+     *
+     * @return News
+     */
+    public function addImage(\AppBundle\Entity\Images $image)
+    {
+        $this->images[] = $image;
+
+        return $this;
+    }
+
+    /**
+     * Remove image
+     *
+     * @param \AppBundle\Entity\Images $image
+     */
+    public function removeImage(\AppBundle\Entity\Images $image)
+    {
+        $this->images->removeElement($image);
+    }
+
+    /**
+     * Get images
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getImages()
+    {
+        return $this->images;
     }
 }

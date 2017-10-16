@@ -98,11 +98,11 @@ class FosUser
      */
     private $roles;
 
-
     /*
-     * Méthode pour récupérer en string le username de FosUser
+     * On remet le tostring effacé par la regénération d'entité
      */
-    public function __toString() {
+    public function __toString()
+    {
         return $this->username;
     }
 
@@ -115,7 +115,6 @@ class FosUser
     {
         return $this->id;
     }
-
 
     /**
      * Set username
