@@ -55,13 +55,13 @@ class News
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Images", mappedBy="news")
+     * @ORM\ManyToMany(targetEntity="Images")
      * @ORM\JoinTable(name="images_has_news",
      *   joinColumns={
-     *     @ORM\JoinColumn(name="images_id", referencedColumnName="id")
+     *     @ORM\JoinColumn(name="news_id", referencedColumnName="id")
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="news_id", referencedColumnName="id")
+     *     @ORM\JoinColumn(name="images_id", referencedColumnName="id")
      *   }
      * )
      */
@@ -193,7 +193,6 @@ class News
     public function addImage(\AppBundle\Entity\Images $image)
     {
         $this->images[] = $image;
-        dump("ajout");
         return $this;
     }
 

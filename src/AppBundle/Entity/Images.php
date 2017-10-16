@@ -31,7 +31,7 @@ class Images
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="News", inversedBy="images")
+     * @ORM\ManyToMany(targetEntity="News")
      * @ORM\JoinTable(name="images_has_news",
      *   joinColumns={
      *     @ORM\JoinColumn(name="images_id", referencedColumnName="id")
