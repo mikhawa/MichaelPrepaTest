@@ -51,6 +51,13 @@ class Images
         $this->news = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    /*
+     * Correction bug tostring
+     */
+    public function __toString()
+    {
+        return $this->url;
+    }
 
     /**
      * Get id
@@ -96,7 +103,7 @@ class Images
     public function addNews(\AppBundle\Entity\News $news)
     {
         $this->news[] = $news;
-
+        dump("ajout");
         return $this;
     }
 
