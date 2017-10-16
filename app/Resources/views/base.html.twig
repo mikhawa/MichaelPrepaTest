@@ -37,6 +37,12 @@
                         <a class="nav-link" href="{{ path("admin_news_index") }}">Admin News</a>
                     </li>
                 {% endif %}
+                    {# SI on est SUPER admin#}
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path("admin_fos_user_index") }}">Admin Users</a>
+                        </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path("fos_user_security_logout") }}">Déconnexion</a>
                     </li>
