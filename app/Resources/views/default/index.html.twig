@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-   ici notre accueil
+   {% for n in thenews %}
+       <h3>{{ n.titre }}</h3>
+       <p>{{ n.texte }}</p>
+       <p>Le {{ n.temps|date("Y-m-d") }} par {{ n.fosuserid.username }}</p>
+       <hr/>
+{% endfor %}
 {% endblock %}
