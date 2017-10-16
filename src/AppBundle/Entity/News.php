@@ -53,5 +53,110 @@ class News
     private $fosuserid;
 
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set titre
+     *
+     * @param string $titre
+     *
+     * @return News
+     */
+    public function setTitre($titre)
+    {
+        $this->titre = $titre;
+
+        return $this;
+    }
+
+    /**
+     * Get titre
+     *
+     * @return string
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
+     * Set texte
+     *
+     * @param string $texte
+     *
+     * @return News
+     */
+    public function setTexte($texte)
+    {
+        $this->texte = $texte;
+
+        return $this;
+    }
+
+    /**
+     * Get texte
+     *
+     * @return string
+     */
+    public function getTexte()
+    {
+        return $this->texte;
+    }
+
+    /**
+     * Set temps
+     *
+     * @param \DateTime $temps
+     *
+     * @return News
+     */
+    public function setTemps($temps)
+    {
+        $this->temps = $temps;
+
+        return $this;
+    }
+
+    /**
+     * Get temps
+     *
+     * @return \DateTime
+     */
+    public function getTemps()
+    {
+        return $this->temps;
+    }
+
+    /**
+     * Set fosuserid
+     *
+     * @param \AppBundle\Entity\FosUser $fosuserid
+     *
+     * @return News
+     */
+    public function setFosuserid(\AppBundle\Entity\FosUser $fosuserid = null)
+    {
+        $this->fosuserid = $fosuserid;
+
+        return $this;
+    }
+
+    /**
+     * Get fosuserid
+     *
+     * @return \AppBundle\Entity\FosUser
+     */
+    public function getFosuserid()
+    {
+        return $this->fosuserid;
+    }
+}
