@@ -52,7 +52,13 @@ class News
      */
     private $fosuserid;
 
-
+    /*
+     * Création d'un constructeur pour prendre la date par défaut du serveur
+     */
+    public function __construct()
+    {
+        $this->temps = new \DateTime();
+    }
 
     /**
      * Get id
