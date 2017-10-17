@@ -99,6 +99,11 @@ class FosUser
     private $roles;
 
 
+    // ajout d'un tostring
+    public function __toString()
+    {
+        return $this->username;
+    }
 
     /**
      * Get id

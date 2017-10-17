@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Blabla</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ blabla.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ blabla.titre }}</td>
+            </tr>
+            <tr>
+                <th>Texte</th>
+                <td>{{ blabla.texte }}</td>
+            </tr>
+            <tr>
+                <th>Ladate</th>
+                <td>{% if blabla.ladate %}{{ blabla.ladate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_news_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_news_edit', { 'id': blabla.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -51,6 +51,11 @@ class Image
         $this->blabla = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    // ajout d'un tostring
+    public function __toString()
+    {
+        return $this->url;
+    }
 
     /**
      * Get id

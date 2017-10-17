@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Blablas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Texte</th>
+                <th>Ladate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for blabla in blablas %}
+            <tr>
+                <td><a href="{{ path('admin_news_show', { 'id': blabla.id }) }}">{{ blabla.id }}</a></td>
+                <td>{{ blabla.titre }}</td>
+                <td>{{ blabla.texte }}</td>
+                <td>{% if blabla.ladate %}{{ blabla.ladate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_news_show', { 'id': blabla.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_news_edit', { 'id': blabla.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_news_new') }}">Create a new blabla</a>
+        </li>
+    </ul>
+{% endblock %}
