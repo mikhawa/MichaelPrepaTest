@@ -3,7 +3,7 @@ parameters:
     database_host: 127.0.0.1
     database_port: null
     # update name of database
-    database_name: michaelprepatest
+    database_name: michaelprepamany
     database_user: root
     database_password: null
     mailer_transport: smtp
